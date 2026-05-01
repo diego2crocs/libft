@@ -16,6 +16,13 @@ void	ft_putendl_fd(char *s, int fd);
 int	ft_factorial(int nb);
 int	ft_sqrt(int nb);
 int	ft_fibonacci(int index);
+int	ft_abs(int n);
+int	ft_min(int a, int b);
+int	ft_max(int a, int b);
+int	ft_clamp(int val, int min, int max);
+int	ft_pow(int base, int exp);
+int	ft_gcd(int a, int b);
+int	ft_lcm(int a, int b);
 
 // strings
 int	ft_atoi(const char *str);
@@ -34,6 +41,7 @@ char	*ft_strnstr(const char *big, const char *little, size_t len);
 char	*ft_strrchr(const char *s, int c);
 char	*ft_substr(char const *s, unsigned int start, size_t len);
 char	*ft_strtrim(char const *s1, char const *set);
+int	ft_strcmp(const char *s1, const char *s2);
 
 // memory
 void	*ft_memset(void *s, int value, size_t n);
@@ -69,5 +77,9 @@ int	ft_isdigit(int c);
 int	ft_isascii(int c);
 int	ft_isalpha(int c);
 int	ft_isalnum(int c);
+int ft_isspace(int c);
+int ft_isupper(int c);
+int ft_islower(int c);
+int	ft_isprime(int n);
 
 #endif
