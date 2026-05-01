@@ -5,6 +5,7 @@
 # include <stdio.h>
 # include <unistd.h>
 # include <string.h>
+# include <stdarg.h>
 
 // put
 void ft_putstr_fd(char *c, int fd);
@@ -81,5 +82,14 @@ int ft_isspace(int c);
 int ft_isupper(int c);
 int ft_islower(int c);
 int	ft_isprime(int n);
+
+// print
+int ft_putunsigned(unsigned int n);
+int	ft_putstr(char *c);
+int ft_putptr(void *ptr);
+int ft_putnbr(int c);
+int ft_puthex(unsigned int c, char format);
+int	ft_printf(const char *format, ...);
+char	ft_putchar(char c);
 
 #endif
