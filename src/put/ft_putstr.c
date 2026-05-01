@@ -6,7 +6,7 @@ void ft_putstr_fd(char *c, int fd)
 
 	while (c[i])
 	{
-		ft_putchar_fd(c[i]);
+		ft_putchar_fd(c[i], fd);
 		i++;
 	}
 	c[i] = '\0';
