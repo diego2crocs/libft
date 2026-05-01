@@ -24,7 +24,6 @@ $(NAME): $(OBJS)
 	@$(AR) $(NAME) $(OBJS)
 	@echo "$(GREEN)✓ $(NAME) créé avec succès$(RESET)"
 
-# Compilation : recrée l'arborescence dans obj/
 $(OBJ_DIR)/%.o: $(SRC_DIR)/%.c
 	@mkdir -p $(dir $@)
 	@$(CC) $(CFLAGS) -c $< -o $@
