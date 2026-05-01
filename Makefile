@@ -13,6 +13,7 @@ SRCS		= $(wildcard $(SRC_DIR)/*.c) $(wildcard $(SRC_DIR)/*/*.c)
 
 OBJS		= $(SRCS:$(SRC_DIR)/%.c=$(OBJ_DIR)/%.o)
 
+NB_TOTAL   = $(words $(wildcard $(SRC_DIR)/*/*.c))
 NB_IS      = $(words $(wildcard $(SRC_DIR)/is/*.c))
 NB_LIST    = $(words $(wildcard $(SRC_DIR)/list/*.c))
 NB_MATH    = $(words $(wildcard $(SRC_DIR)/math/*.c))
@@ -36,13 +37,15 @@ all: $(NAME)
 $(NAME): $(OBJS)
 	@$(AR) $(NAME) $(OBJS)
 	@echo "$(GREEN)✓ $(NAME) créé avec succès$(RESET)"
-	@echo "$(BOLD_MAGENTA)  is/      : $(NB_IS) fichiers"
-	@echo "$(BOLD_MAGENTA)  list/    : $(NB_LIST) fichiers"
-	@echo "$(BOLD_MAGENTA)  math/    : $(NB_MATH) fichiers"
-	@echo "$(BOLD_MAGENTA)  memory/  : $(NB_MEMORY) fichiers"
-	@echo "$(BOLD_MAGENTA)  print/   : $(NB_PRINT) fichiers"
-	@echo "$(BOLD_MAGENTA)  put/     : $(NB_PUT) fichiers"
-	@echo "$(BOLD_MAGENTA)  strings/ : $(NB_STRINGS) fichiers"
+	@echo "$(BOLD_BLUE)  $(NB_TOTAL) fichiers"
+	@echo "$(MAGENTA)  Détail :"
+	@echo "$(MAGENTA)  	is/      : $(BOLD_MAGENTA)$(NB_IS) fichiers"
+	@echo "$(MAGENTA)  	list/    : $(BOLD_MAGENTA)$(NB_LIST) fichiers"
+	@echo "$(MAGENTA)  	math/    : $(BOLD_MAGENTA)$(NB_MATH) fichiers"
+	@echo "$(MAGENTA)  	memory/  : $(BOLD_MAGENTA)$(NB_MEMORY) fichiers"
+	@echo "$(MAGENTA)  	print/   : $(BOLD_MAGENTA)$(NB_PRINT) fichiers"
+	@echo "$(MAGENTA)  	put/     : $(BOLD_MAGENTA)$(NB_PUT) fichiers"
+	@echo "$(MAGENTA)  	strings/ : $(BOLD_MAGENTA)$(NB_STRINGS) fichiers"
 
 $(OBJ_DIR)/%.o: $(SRC_DIR)/%.c
 	@mkdir -p $(dir $@)
